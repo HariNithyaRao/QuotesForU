@@ -19,12 +19,12 @@ formatted_date = d.strftime('%Y-%m-%d')
 
 # Set up Snowflake connection details
 conn = snowflake.connector.connect(
-    account="ps41249.central-india.azure",
-    user="NITHYA",
-    password="Nithy@snowflake123",
-    database="QUOTES",
-    schema="TEST",
-    warehouse="COMPUTE_WH"
+    account=st.secrets.connections.snowpark.account,
+    user=st.secrets.connections.snowpark.user,
+    password=st.secrets.connections.snowpark.password,
+    database=st.secrets.connections.snowpark.database,
+    schema=st.secrets.connections.snowpark.schema,
+    warehouse=st.secrets.connections.snowpark.warehouse
 )
 # Create a cursor
 cur = conn.cursor()

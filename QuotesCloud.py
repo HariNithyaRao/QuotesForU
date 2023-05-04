@@ -14,7 +14,8 @@ with col1:
 with col2:
     st.title("Quotes For U")
 
-d=st.date_input("Select date")
+d=st.date_input("Select a date",min_value=datetime.date(2023,3,30),
+               max_value=datetime.date(2024,6,6))
 formatted_date = d.strftime('%Y-%m-%d')
 
 # Set up Snowflake connection details

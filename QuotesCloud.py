@@ -6,7 +6,7 @@ import json
 from streamlit_lottie import st_lottie
 
 #loading json animation
-with open('D:/Ammulu/QuotesForU/123755-designers.json', 'r') as f:
+with open('123755-designers.json', 'r') as f:
     lottie_json = json.load(f)
 col1, col2 = st.columns([1, 3])
 with col1:

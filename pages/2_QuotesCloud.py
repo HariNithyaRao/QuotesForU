@@ -17,7 +17,7 @@ with col1:
 with col2:
     st.markdown("<link href='https://fonts.googleapis.com/css2?family=Rammetto One&display=swap' rel='stylesheet'>",unsafe_allow_html=True)
     st.markdown("<h2><span style='text-align: center; color: violet; font-family:Rammetto One;'>Quotes</span> <span style='color: orange;font-family:Rammetto One, cursive;'>For</span> <span style='color: blue;font-family:Rammetto One, cursive;'>U</span></h2>", unsafe_allow_html=True)
-color_header(
+colored_header(
     label="",
     description="",
     color_name="violet-70",

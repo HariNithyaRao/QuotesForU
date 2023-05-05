@@ -7,7 +7,7 @@ from streamlit_lottie import st_lottie
 from streamlit_extras.add_vertical_space import add_vertical_space
 from streamlit_extras.colored_header import colored_header
 
-
+st.set_page_config(page_title="Quotes", page_icon=":lower_left_fountain_pen:", layout="wide")
 #loading json animation
 with open('123755-designers.json', 'r') as f:
     lottie_json = json.load(f)

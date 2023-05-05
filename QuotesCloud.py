@@ -39,10 +39,3 @@ rows = cur.execute(query,(formatted_date,)).fetchone()
 st.write(rows[0])
 add_vertical_space(1)
 st.write("_",rows[1])
-
-# Convert results to a pandas dataframe
-#df = pd.DataFrame(rows, columns=[col[0] for col in cur.description])
-
-# Display data in Streamlit app
-#st.title('Snowflake Streamlit App')
-#st.write(df)

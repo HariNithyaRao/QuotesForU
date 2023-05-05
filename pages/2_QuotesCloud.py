@@ -43,6 +43,8 @@ cur = conn.cursor()
 # Query the Snowflake database and retrieve data
 query='SELECT quote,author FROM QUOTATIONS where index=%s'
 rows = cur.execute(query,(formatted_date,)).fetchone()
+
+
 st.write(rows[0])
 add_vertical_space(1)
 st.write("_",rows[1])

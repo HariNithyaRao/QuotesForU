@@ -13,8 +13,12 @@ col1, col2 = st.columns([1, 3])
 with col1:
     st_lottie(lottie_json, speed=1, width=100, height=100, key='lottie')
 with col2:
-    st.title("Quotes For U")
-
+    st.markdown("<h2><span  style='text-align: center; color: violet; font-family:Satisfy;'>Quotes</span> <span style='color: orange;font-family:Satisfy;'>For</span> <span style='color: blue;font-family:Satisfy;'>U</span></h2>", unsafe_allow_html=True)
+colored_header(
+    label="",
+    description="",
+    color_name="violet-70",
+)
 d=st.date_input("Select a date",min_value=datetime.date(2023,3,30),
                max_value=datetime.date(2024,6,6))
 formatted_date = d.strftime('%Y-%m-%d')

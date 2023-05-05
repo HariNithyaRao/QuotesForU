@@ -4,6 +4,7 @@ import pandas as pd
 import time,datetime
 import json
 from streamlit_lottie import st_lottie
+from streamlit_extras.add_vertical_space import add_vertical_space
 
 #loading json animation
 with open('123755-designers.json', 'r') as f:
@@ -35,8 +36,9 @@ cur = conn.cursor()
 # Query the Snowflake database and retrieve data
 query='SELECT quote,author FROM QUOTATIONS where index=%s'
 rows = cur.execute(query,(formatted_date,)).fetchone()
-txt = rows[0]+"\n"+"\t"*(5)+rows[1]
-st.text(txt)
+st.write(rows[0])
+add_vertical_space(1)
+st.write("_",rows[1])
 
 # Convert results to a pandas dataframe
 #df = pd.DataFrame(rows, columns=[col[0] for col in cur.description])

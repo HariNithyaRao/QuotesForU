@@ -5,6 +5,8 @@ import time,datetime
 import json
 from streamlit_lottie import st_lottie
 from streamlit_extras.add_vertical_space import add_vertical_space
+from streamlit_extras.colored_header import colored_header
+
 
 #loading json animation
 with open('123755-designers.json', 'r') as f:

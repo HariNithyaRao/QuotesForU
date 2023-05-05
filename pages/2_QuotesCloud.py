@@ -15,8 +15,8 @@ col1, col2 = st.columns([1, 3])
 with col1:
     st_lottie(lottie_json, speed=1, width=100, height=100, key='lottie')
 with col2:
-    st.markdown("<h2><span  style='text-align: center; color: violet; font-family:Satisfy;'>Quotes</span> <span style='color: orange;font-family:Satisfy;'>For</span> <span style='color: blue;font-family:Satisfy;'>U</span></h2>", unsafe_allow_html=True)
-colored_header(
+    st.markdown("<link href='https://fonts.googleapis.com/css2?family=Rammetto One&display=swap' rel='stylesheet'>",unsafe_allow_html=True)
+    st.markdown("<h2><span style='text-align: center; color: violet; font-family:Rammetto One;'>Quotes</span> <span style='color: orange;font-family:Rammetto One, cursive;'>For</span> <span style='color: blue;font-family:Rammetto One, cursive;'>U</span></h2>", unsafe_allow_html=True)colored_header(
     label="",
     description="",
     color_name="violet-70",

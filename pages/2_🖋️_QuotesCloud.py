@@ -44,7 +44,7 @@ cur = conn.cursor()
 query='SELECT quote,author FROM QUOTATIONS where index=%s'
 rows = cur.execute(query,(formatted_date,)).fetchone()
 
-txt1 = '<span style="color:midnightblue;font-size: 45px;font-family:Sail;">{}</span>'.format(rows[0])
+txt1 = '<span style="color:midnightblue;font-size: 45px;font-family:Belgrano">{}</span>'.format(rows[0])
 txt2='<span style="color: midnightblue;font-size: 40px;font-family:Belgrano;">{}</span>'.format(rows[1])
 
 st.markdown(txt1, unsafe_allow_html=True)

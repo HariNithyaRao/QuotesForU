@@ -23,7 +23,7 @@ colored_header(
     color_name="violet-70",
 )
 d=st.date_input("Select a date",min_value=datetime.date(2023,3,30),
-               max_value=datetime.today().date())
+               max_value=datetime.date.today())
 formatted_date = d.strftime('%Y-%m-%d')
 
 # Set up Snowflake connection details

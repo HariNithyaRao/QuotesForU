@@ -24,4 +24,4 @@ def set_bg_hack(main_bg):
          """,
         unsafe_allow_html=True
     )
-set_bg_hack("Welcome .png")
+set_bg_hack("welcome1.png")

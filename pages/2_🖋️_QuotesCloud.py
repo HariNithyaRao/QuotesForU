@@ -1,7 +1,7 @@
 import streamlit as st
 import snowflake.connector
 import pandas as pd
-import time,datetime
+from datetime import datetime
 import json
 from streamlit_lottie import st_lottie
 from streamlit_extras.add_vertical_space import add_vertical_space

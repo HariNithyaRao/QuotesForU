@@ -1,7 +1,7 @@
 import streamlit as st
 import snowflake.connector
 import pandas as pd
-from datetime import datetime
+import time,datetime
 import json
 from streamlit_lottie import st_lottie
 from streamlit_extras.add_vertical_space import add_vertical_space
@@ -22,9 +22,8 @@ colored_header(
     description="",
     color_name="violet-70",
 )
-today=datetime.today().date()
 d=st.date_input("Select a date",min_value=datetime.date(2023,3,30),
-               max_value=today)
+               max_value=datetime.today().date())
 formatted_date = d.strftime('%Y-%m-%d')
 
 # Set up Snowflake connection details

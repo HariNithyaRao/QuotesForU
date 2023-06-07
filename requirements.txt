@@ -1,4 +1,3 @@
 streamlit
-snowflake-connector-python
 streamlit-lottie
 streamlit-extras

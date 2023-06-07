@@ -8,7 +8,7 @@ from streamlit_extras.colored_header import colored_header
 
 st.set_page_config(page_title="Quotes", page_icon=":lower_left_fountain_pen:", layout="wide")
 
-con = sqlite3.connect("Quotes.db")
+con = sqlite3.connect("pages/Quotes.db")
 cur=con.cursor()
 
 #loading json animation

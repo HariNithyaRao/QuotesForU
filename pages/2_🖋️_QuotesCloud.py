@@ -1,13 +1,16 @@
 import streamlit as st
-import snowflake.connector
-import pandas as pd
 import time,datetime
 import json
+import sqlite3
 from streamlit_lottie import st_lottie
 from streamlit_extras.add_vertical_space import add_vertical_space
 from streamlit_extras.colored_header import colored_header
 
 st.set_page_config(page_title="Quotes", page_icon=":lower_left_fountain_pen:", layout="wide")
+
+con = sqlite3.connect("Quotes.db")
+cur=con.cursor()
+
 #loading json animation
 with open('123755-designers.json', 'r') as f:
     lottie_json = json.load(f)
@@ -26,23 +29,10 @@ d=st.date_input("Select a date",min_value=datetime.date(2023,3,30),
                max_value=datetime.date.today())
 formatted_date = d.strftime('%Y-%m-%d')
 
-# Set up Snowflake connection details
-conn = snowflake.connector.connect(
-    account=st.secrets.connections.snowpark.account,
-    user=st.secrets.connections.snowpark.user,
-    password=st.secrets.connections.snowpark.password,
-    database=st.secrets.connections.snowpark.database,
-    schema=st.secrets.connections.snowpark.schema,
-    warehouse=st.secrets.connections.snowpark.warehouse
-)
-# Create a cursor
-cur = conn.cursor()
-#print(d)
-#print(type(d))
+
 
 # Query the Snowflake database and retrieve data
-query='SELECT quote,author FROM QUOTATIONS where index=%s'
-rows = cur.execute(query,(formatted_date,)).fetchone()
+rows = cur.execute("select quote,author from q where id = (?)",(formatted_date,)).fetchone()
 
 txt1 = '<span style="color:midnightblue;font-size: 45px;font-family:Belgrano">{}</span>'.format(rows[0])
 txt2='<span style="color: midnightblue;font-size: 40px;font-family:Belgrano;">{}</span>'.format(rows[1])
@@ -50,4 +40,3 @@ txt2='<span style="color: midnightblue;font-size: 40px;font-family:Belgrano;">{}
 st.markdown(txt1, unsafe_allow_html=True)
 add_vertical_space(1)
 st.markdown(txt2,unsafe_allow_html=True)
-
